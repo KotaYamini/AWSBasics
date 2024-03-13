@@ -1,0 +1,30 @@
+AWS has Global Services:
+
+1.  Identity and Access Management(IAM)
+2.  Route 53 (DNS Service)
+3.  CloudFront (Content Delivery Network)
+4.  WAF(Web Application Firewall)
+
+Most AWS services are Region-scoped:
+
+1. Amazon EC2 (Infrastructure as a Service)
+2. Elastic Beanstalk(Platform as a Service)
+3. Lambda (Function as a Service)
+4. Rekognition (Software as a Service)
+
+<!--
+* 33 launched Regions
+each with multiple Availability Zones
+
+* 105 Availability Zones
+
+* 600+ CloudFront POPs
+and 13 Regional edge caches
+
+* 39 Local Zones
+* 29 Wavelength Zones for ultralow-latency applications
+
+* 245 countries and territories served
+
+* 135 Direct Connect locations
+ -->
