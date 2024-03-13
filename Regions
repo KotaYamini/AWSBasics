@@ -1,0 +1,13 @@
+## AWS Regions
+
+1. AWS has regions all around the world.
+2. Names can be us-east-1, eu-west-3
+3. A region is a cluster of data centers
+4. Most AWS services are region-scoped
+
+## How to choose an AWS Region?
+
+1. Compliance: with data governance and legal requirements: datanever leaves a region without your explicit permission
+2. Proximity to cusstomers: reduced latency
+3. Available service within a Region: new services and new features aren't available in every region.
+4. Pricing: Pricing varies region to region and is transparent in the service pricing page.

@@ -1,0 +1,8 @@
+1. Each region has many availability zones ( usually 3, min is 3, max is 6).
+Example: 
+a. ap-southeast-2a
+b. ap-southeast-2b
+c. ap-southeast-2c
+2. Each availability zone(AZ) is one or more discrete data centers with reduntant power,networking and connectivity.
+3. They are seperate from each other, so that they're isolated from disasters.
+4. They are connected with high bandwidth, ultra-low latency networking.
