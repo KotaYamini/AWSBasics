@@ -147,3 +147,16 @@ To access AWS, you have three options:
    - Mobile SDKs(Android, iOS, ...)
    - IoT Device SDKs(Embedded C, Arudino, ...)
 6. Example: AWS CLI built on AWS SDK for Python using Boto library.
+
+# IAM Roles for Services
+
+1. Some AWS service will need to perform actions on your behalf.
+2. To do so, we will assign permissions to AWS services with IAM roles.
+
+Example. We have an EC2 (virtual server) attached with IAM Role in order to access the AWS.
+
+Common Roles:
+
+1. EC2 Instance Roles.
+2. Lambda Function Roles.
+3. Roles for CloudFormation.
