@@ -71,6 +71,8 @@ Statements consists of
 ]
 }
 
+ <!-- A statement in an IAM policy consists of Sid, Effect, Principal, Action, Resource and condition. Version is a part of the IAM policy itself, not the statement. -->
+
 ## IAM - Password Policy
 
 1. Strong passwords = higher security for your account
@@ -170,3 +172,42 @@ Common Roles:
 2. IAM Access Advisor (user-level)
 
 - Access Advisor shows the service permissions granted to a user and when those services were last accessed.
+
+# IAM Guidelines & Best Practices
+
+1. Don't use the root account except for AWS account setup.
+2. One physical user = One AWS user
+3. Assign users to groups and assign permissions to groups.
+4. Create a strong password policy.
+5. Use and enforce the use of Multi Factor Authentication (MFA).
+6. Create and use "Roles" for giving permissions to AWS Services.
+7. Use Access Keys for Programmatic Access(CLI/SDK).
+8. Audit permissions of your account using IAM Credentials Report & IAM Access Advisor.
+
+# IAM -Shared Responsibility Model for IAM
+
+- AWS:
+
+1.  Infrastructure(global network security).
+2.  Configuration and vulnerability analysis.
+3.  Compliance Validation
+
+- User:
+
+1.  Users,Groups,Roles,Policies,management and monitoring.
+2.  Enable MFA on all accounts.
+3.  Rotate all your keys often.
+4.  Use IAM tools to apply appropriate permissions.
+5.  Analyse access patterns & review permissions.
+
+# IAM Section - Summary
+
+1. Users: mapped to a physical user, has a password for AWS Console.
+2. Groups: Contain users only
+3. Policies: JSON document that outlines permissions for users or groups.
+4. Roles: for EC2 instances or AWS services.
+5. Security: MFA + Password Policy
+6. AWS CLI: manage your AWS services using the command-line.
+7. AWS SDK: Manage your AWS services using a programming language.
+8. Access Keys: access AWS using the CLI or SDK.
+9. Audit: IAM Credential Reports & IAM Access Advisor.
