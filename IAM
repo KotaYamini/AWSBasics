@@ -91,3 +91,59 @@ Statements consists of
 1. Users have access to your account and can possibly change configurations or delete resources in your AWS account.
 2. You want to protect your Root Accounts and IAM users.
 3. MFA = password you know + security device you own
+
+# Main benefit of MFA:
+
+If a password is stolen or hacked, the account is not compromised.
+
+Virtual MFA Device:
+
+1. Google Authenticator
+2. Authy(multi-device)
+
+Both of them support for multiple tokens on a single device.
+
+3. Universal 2nd Factor(U2F) Security Key
+   -YubiKey by Yubico (3rd party)
+   Support for multiple root and IAM users using a single security key.
+
+# MFA Devices options in AWS
+
+1. Hardware Key Fob MFA Device
+   - Provided by Gemalto (3rd party)
+2. Hardware Key Fob MFA Device for AWS GovCloud (US)
+   - Provided by SurePassID(3rd party).
+
+# AWS Access Keys:
+
+To access AWS, you have three options:
+
+1. AWS Management console(protected by password + MFA).
+2. AWS Command Line Interface(CLI): protected by access keys.
+3. AWS Software Developer Kit(SDK)- for code: protected by access keys.
+
+- Access Keys are generated through the AWS Console.
+- Users manage their own access keys
+- Access Keys are secret, just like a password. Dont share them.
+- Access Key ID ~= username
+- Secret Access Key ~= password
+
+# AWS CLI:
+
+- A tool that enables you to interact with AWS services using commands in your command-line shell.
+- Direct access to the public APIs of AWS services.
+- You can develop scripts to manage your resources.
+- Its open-source https://github.com/aws/aws-cli
+- Alternative to using AWS Management Console.
+
+# AWS SDK :
+
+1. AWS Software Development Kit (AWS SDK)
+2. Language-specific APIs (set of libraries)
+3. Enables you to access and manage AWS services programmatically.
+4. Embedded within your application
+5. Supports
+   - SDKs(Javascript, Python, PHP, .NET, Ruby, Java, Go, Node.js, C++)
+   - Mobile SDKs(Android, iOS, ...)
+   - IoT Device SDKs(Embedded C, Arudino, ...)
+6. Example: AWS CLI built on AWS SDK for Python using Boto library.
