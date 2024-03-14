@@ -160,3 +160,13 @@ Common Roles:
 1. EC2 Instance Roles.
 2. Lambda Function Roles.
 3. Roles for CloudFormation.
+
+# IAM Security Tools
+
+1. IAM Credentials Report (account-level)
+
+- A report that lists all your account's users and the status of their various credentials.
+
+2. IAM Access Advisor (user-level)
+
+- Access Advisor shows the service permissions granted to a user and when those services were last accessed.
