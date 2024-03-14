@@ -70,3 +70,24 @@ Statements consists of
 }
 ]
 }
+
+## IAM - Password Policy
+
+1. Strong passwords = higher security for your account
+2. In AWS, you can setup a password policy:
+
+- Set a minimum password length
+- Require specific character types:
+  a. including uppercase letters
+  b. lowercase letters
+  c. numbers
+  d. non-alphanumeric characters
+- Allow all IAM users to change their own passwords.
+- Require users to change their password after some time (password expiration).
+- Prevent password re-use.
+
+## Multi Factor Authentication - MFA
+
+1. Users have access to your account and can possibly change configurations or delete resources in your AWS account.
+2. You want to protect your Root Accounts and IAM users.
+3. MFA = password you know + security device you own
