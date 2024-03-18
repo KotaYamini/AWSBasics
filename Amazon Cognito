@@ -1,0 +1,28 @@
+Give users an identity to interact wit h our web or mobile application
+
+# Cognito User Pools:
+
+- Sign in functionality for app users.
+- Integrate with API Gateway & Application Load Balancer.
+
+# Cognito Identity Pools(Federated Identity):
+
+- Provide AWS Credentitals to users so they can access AWS resources directly.
+- Integrate with Cognito User pools as an identity provider.
+
+# Cognito vs IAM:
+
+"hundreds of users"
+"mobile users"
+"authenticate with SAML"
+
+# Cognito User Pools(CUP) - User Features
+
+1. Create a serverless database of user for your web and mobile apps.
+2. Simple Login: Username (or email) / password combination
+3. Password reset
+4. Email & Phone Number Verification.
+5. Multi-factor Authentication (MFA)
+6. Federated Identities: Users from Facebook,Google,SAML..
+7. Feature: block users if their credentials are compromised else where.
+8. Login sends back a JSON Web Token(JWT).

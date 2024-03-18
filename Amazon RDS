@@ -1,0 +1,72 @@
+# Amazon RDS Overview:
+
+1. RDS stands for Relational Database Service.
+2. It's a managed DB service for DB use SQL as a query language.
+3. It allows you to create databases in the cloud that are managed by AWS.
+
+- Postgres
+- MySQL
+- MariaDB
+- Oracle
+- Microsoft SQL Server
+- IBM DB2
+- Aurora (AWS Proprietary Database)
+
+# Advantage over using RDS versus deploying DB on EC2
+
+\*RDS is a managed service.
+
+- Automated provisioning, OS patching.
+- Continuous backups and restore to specific timestamp (Point in Time Restore)!
+- Monitoring dashboards
+- Read replicas for improved read performance.
+- Multi AZ setup for DR (Disaster Recovery).
+- Maintenance windows for upgrades.
+- Scaling capability (vertical and horizontal).
+- Storage backed by EBS (gp2 or io1).
+
+\*But you can't SSH into your instances.
+
+# RDS- Storage Auto Scaling
+
+- Helps you increase storage on your RDS DB instance dynamically.
+- When RDS detects you are running out of free database storage, it scales automatically.
+- Avoid manually scaling your database storage.
+- You have to set Maximum Storage Threshold(maximum limit for DB storage)
+- Automatically modify storage if:
+  1. Free storage is less than 10% of allocated storage.
+  2. Low-storage lasts at least 5 minutes.
+  3. 6 hours have passes since last modification.
+- Useful for applications with unpredictable workloads
+- Supports all RDS database engines.
+
+# RDS Read Replicas for read scalability:
+
+1. Upto 15 Read Replicas.
+2. Within AZ, Cross AZ or Cross Region.
+3. Replication is ASYNC so reads are eventually consistent.
+4. Replicas can be promoted to their own DB.
+5. Applications must update the connection string to levergae read replicas.
+
+# RDS Read Replicas - Use Cases:
+
+1. You have a production database that is taking on normal load.
+2. You want to run a reporting application to run some analytics.
+3. You create a Read Replica to run the new workload there.
+4. The production application is unaffected.
+5. Read replicas are used for SELECT(=read) only kind of statements. (not INSERT, UPDATE, DELETE).
+
+# RDS Read Replicas - Network Cost
+
+1. In AWS there's a network cost when data goes from one AZ to another.
+2. For RDS Read Replicas within the same region, you don't pay that fee.
+3. For RDS Read Replicas are in the cross region, you pay that fee.
+
+# RDS Multi AZ(Disaster Recovery):
+
+1. SYNC replication
+2. One DNS name - automatic app failover to standby.
+3. Increase availability.
+4. Failover in case of loss of AZ, loss of network,instance or storage failure.
+5. No manual intervention in apps.
+6. Not used for scaling.

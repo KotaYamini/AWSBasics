@@ -1,0 +1,65 @@
+AWS Cloud Development Kit(CDK):
+
+1. Define your cloud infrastructure using a familiar language:
+
+- Javascript/Typescript,Python,Java and .NET.
+
+2. Contains high level components called constructs.
+3. The code is "compiled" into a CloudFormation template (JSON/YAML).
+4. You can therefore deploy infrastructure and application runtime code together.
+
+- Great for Lambda functions.
+- Great for Docker containers in ECS/EKS
+
+## Example:
+
+export class MyEcsConstructStack extends core.stack {
+
+    constructor(scope: core.App, id: string, props?: core.StackProps)
+
+    super(scope, id, props);
+
+    const vpc = new ec2.Vpc(this, "MyVpc", {
+        maxAzs: 3
+    });
+
+    const cluster = new ecs.Cluster(this, "MyCluster", {
+        vpc: vpc
+    })
+
+// create a load-balanced Fargate service and make it public
+new ecs_patterns.ApplicationLoadBalancedFargateService(this, "MyCluster", {
+cluster: "cluster",
+cpu: 512,
+desiredCount: 6,
+taskImageOptions: {
+image: ecs.ContainerImage.fromRegistry("am")
+},
+memorylimitMiB: 204B,
+publicLoadBalancer: true
+})
+
+}
+
+# CDK in a digaram:
+
+We have CDK Application constructs like Lambda, Dynamo DB, S3 bucket, AWS Step Fucntions, ECS and so on can be written in any one of the programming languages like Python, node Js, Java , .NET where we can ewrite CDK file and the nsynthesis using CDK CLI like "cdk synth" into "cloud Formation Template" which define for infrastructure.
+
+# CDK vs SAM
+
+1. SAM:
+   - Serverless focused
+   - Write your template declaratively in JSON or YAML
+   - Great for quickly getting started with Lambda
+   - Levergaes CloudFormation
+2. CDK:
+   - All AWS Services.
+   - Write infra in a programming language Javascript/Typescript,Python, Java and .NET
+   - Leverages cloud Foramtion.
+
+- CDK + SAM
+
+* You ucan use SAM CLI to locally test your CDK apps.
+* You must first run "cdk synth".
+
+We have CDK Application constructs like Lambda, Dynamo DB, S3 bucket, AWS Step Fucntions, ECS and so on can be written in any one of the programming languages like Python, node Js, Java , .NET where we can ewrite CDK file and the nsynthesis using CDK CLI like "cdk synth" into "cloud Formation Template" which define for infrastructure & run the command called sam local invoke -t MyCDKStacktemplate.json myFunction through SAM CLI.

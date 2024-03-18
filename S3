@@ -2,7 +2,7 @@
 
 1. Amazon S3 is one of the main building blocks of AWS
 2. Its advertised as "infinitely scaling" storage.
-3. May websites use amazon S3 as a backbone.
+3. Many websites use amazon S3 as a backbone.
 4. Many AWS services use Amazon S3 as an integration as well.
 5. We'll have a step-by-step approach to S3.
 
@@ -13,7 +13,7 @@
 3. Archive
 4. Hybrid Cloud Storage
 5. Application hosting
-6. Media hosting ie.video files, images and so on
+6. Media hosting i.e., video files, images and so on
 7. Data lakes & big data analytics
 8. Software Delivery
 9. Static website
